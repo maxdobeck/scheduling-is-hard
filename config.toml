@@ -1,0 +1,8 @@
+baseURL = "http://example.org/"
+languageCode = "en-us"
+title = "Scheduling is Hard.com"
+theme = "hugo-theme-lean-launch-page"
+googleAnalytics = "UA-123402073-3"
+tagline = "Scheduling is hard, let us make it easier"
+# mailchimpURL = "my-account.mailchimp.com/my-subscriber-url"
+
