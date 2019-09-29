@@ -19,7 +19,6 @@ body{
 	height: 100%;
 	text-align: center;
 	font-size: 1.3rem;
-	font-family: "Open Sans";
 }
 	.logo{
 		float: left;
@@ -37,14 +36,9 @@ body{
 		margin-top: 10%;
 		margin-bottom: 0;
 		color: #06385d;
-		font-family: "Nunito";
 		font-size: 3.4rem;
-		letter-spacing: 2px;
 		line-height: 1.0;
 	}
-		span.logo{
-			font-family: "Nunito";
-		}
 
 	img{
 		margin-bottom: 30px;
@@ -120,8 +114,6 @@ body{
 		#benefits p{
 			padding-top: 10px;
 		}
-			p.benefit:first-child{
-			}
 
 
 
