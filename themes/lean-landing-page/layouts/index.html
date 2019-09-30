@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+	{{ partial "header" .}}
+<body>
+{{ $directory := "themes/lean-landing-page/static/" }}
+{{ $filename := "favicon.png" }}
+{{ if (where (readDir $directory) "Name" $filename) }}
+	<img class="logo" src="/favicon.png" alt="Logo" />
+{{ end }}
+	<ul class="social-icons">
+		{{ if isset .Site.Params "twitter" }}<li><a href="{{ .Site.Params.twitter }}"><i class="fa fa-twitter"></i></a></li>{{ end }}
+		{{ if isset .Site.Params "facebook" }}<li><a href="{{ .Site.Params.facebook }}"><i class="fa fa-facebook"></i></a></li>{{ end }}
+		{{ if isset .Site.Params "instagram" }}<li><a href="{{ .Site.Params.instagram }}"><i class="fa fa-instagram"></i></a></li>{{ end }}
+		{{ if isset .Site.Params "googleplus" }}<li><a href="{{ .Site.Params.googleplus }}"><i class="fa fa-google-plus"></i></a></li>{{ end }}
+	</ul>
+	{{ block "main" . }}
+	{{ end }}
+	<h1>{{ .Site.Title }}</h1>
+	<p>{{ .Site.Params.tagline }}</p>
+	{{ if isset .Site.Params "mailchimpurl" }}{{ partial "mailchimp-signup" . }}{{ end }}
+	<div id="benefits">
+		{{ range where .Data.Pages "Section" "benefits" }}
+		<div>
+			<h2><i class="fa {{ .Params.icon }}"></i>{{ .Title }}</h2>
+			{{ .Content }}
+		</div>
+		{{ end }}
+	</div>
+	<div id="features">
+		{{ range where .Data.Pages "Section" "features"}}
+		<div>
+			<h2 class="feature">{{ .Title }}</h2>
+			{{ .Content }}
+		</div>
+		{{ end }}
+	</div>
+</body>
+ {{ partial "footer" . }}
+</html>
